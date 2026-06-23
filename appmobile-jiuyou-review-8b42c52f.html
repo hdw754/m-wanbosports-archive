@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>九游娱乐 · 产品说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #faf7f2;
+      font-family: "Noto Serif SC", "Source Han Serif SC", "Times New Roman", Georgia, serif;
+      color: #2d2a24;
+      line-height: 1.7;
+      padding: 2rem 1.2rem;
+    }
+
+    .page {
+      max-width: 840px;
+      margin: 0 auto;
+      background: #fffcf8;
+      border-radius: 28px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.04), 0 2px 12px rgba(0, 0, 0, 0.02);
+      padding: 2.8rem 2rem 3.2rem;
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 1rem 0.6rem;
+      }
+      .page {
+        padding: 2rem 1.2rem 2.6rem;
+        border-radius: 20px;
+      }
+    }
+
+    /* header */
+    .hero {
+      border-bottom: 1px solid #ebe5db;
+      padding-bottom: 1.8rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.3rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #332e27;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero .sub {
+      font-size: 1rem;
+      color: #7b7266;
+      letter-spacing: 1px;
+      font-weight: 400;
+    }
+
+    .tagline {
+      font-style: italic;
+      margin-top: 0.8rem;
+      color: #6d6254;
+      font-size: 1.05rem;
+      border-left: 3px solid #c9b99d;
+      padding-left: 1rem;
+    }
+
+    /* 正文排版 */
+    .prose {
+      font-size: 1.05rem;
+    }
+
+    .prose p {
+      margin-bottom: 1.25rem;
+    }
+
+    .prose .intro-highlight {
+      background: #f2ece4;
+      padding: 0.1rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    /* 亮点卡片式 */
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 2rem 0 2.2rem;
+    }
+
+    .feature-item {
+      flex: 1 1 200px;
+      background: #f6f0e9;
+      border-radius: 18px;
+      padding: 1.3rem 1.2rem 1.2rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .feature-item:hover {
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+    }
+
+    .feature-item h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #3d352b;
+      border-bottom: 2px solid #d6caba;
+      display: inline-block;
+      padding-bottom: 0.2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .feature-item p {
+      font-size: 0.95rem;
+      color: #4f473c;
+      margin-bottom: 0;
+    }
+
+    /* 引用块 */
+    .insight-box {
+      background: #f0ebe2;
+      border-left: 6px solid #b4a088;
+      padding: 1.2rem 1.6rem;
+      border-radius: 0 16px 16px 0;
+      margin: 1.8rem 0 2rem;
+    }
+
+    .insight-box p {
+      margin-bottom: 0.2rem;
+      font-style: normal;
+    }
+
+    .insight-box .label {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.75rem;
+      color: #6b5f4e;
+    }
+
+    /* 使用建议列表 */
+    .usage-list {
+      list-style: none;
+      margin: 0 0 1.8rem 0;
+    }
+
+    .usage-list li {
+      padding: 0.5rem 0 0.5rem 1.8rem;
+      position: relative;
+      border-bottom: 1px dashed #e3dad0;
+    }
+
+    .usage-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0.4rem;
+      font-weight: 700;
+      color: #8f7f6a;
+      font-size: 1.6rem;
+      line-height: 1;
+      top: 0.2rem;
+    }
+
+    .usage-list li:last-child {
+      border-bottom: none;
+    }
+
+    /* 提示框 */
+    .note {
+      background: #eae3d9;
+      padding: 1rem 1.3rem;
+      border-radius: 40px 16px 16px 40px;
+      font-size: 0.95rem;
+      color: #3f382f;
+      margin: 2rem 0 1.6rem;
+      display: inline-block;
+      width: auto;
+    }
+
+    .note strong {
+      font-weight: 600;
+      color: #2b251e;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e1d9ce;
+      margin: 2.2rem 0 1.8rem;
+    }
+
+    .faq-summary {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin: 1.6rem 0 1rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ebe2d6;
+      padding-bottom: 0.6rem;
+    }
+
+    .faq-item .q {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #3f362c;
+    }
+
+    .faq-item .a {
+      color: #5f5546;
+      font-size: 0.95rem;
+      padding-left: 0.5rem;
+    }
+
+    /* 链接样式 */
+    a {
+      color: #7f6b52;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #c6b49c;
+      transition: color 0.15s;
+    }
+
+    a:hover {
+      color: #4c3d2b;
+      text-decoration-color: #4c3d2b;
+    }
+
+    .footer-note {
+      margin-top: 2.8rem;
+      font-size: 0.9rem;
+      color: #7b6f5e;
+      text-align: center;
+      border-top: 1px solid #e3dacf;
+      padding-top: 1.8rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="hero">
+      <h1>九游娱乐</h1>
+      <div class="sub">产品说明 · 定位与用法</div>
+      <div class="tagline">快速识别这个网站能为你做什么</div>
+    </div>
+
+    <div class="prose">
+      <p>
+        当你第一次打开一个网站，最直接的念头往往就是：“这里提供什么？”  
+        <span class="intro-highlight">九游娱乐</span> 是一个以休闲内容为主题的信息站点，围绕游戏、趣味互动和轻度娱乐资讯展开。它不追求宏大叙事，而是希望成为你日常放松时的一个安静去处。
+      </p>
+
+      <p>
+        很多人会把它跟“游戏门户”或者“下载站”混为一谈，其实它的重心更偏向于 <strong>阅读与发现</strong>——你可以在这里找到关于流行玩法的短评、游戏文化的小文章、以及一些值得尝试的趣味推荐。它更像一本电子杂志，而不是一个下载仓库。
+      </p>
+
+      <!-- 亮点区块 -->
+      <div class="feature-grid">
+        <div class="feature-item">
+          <h3>轻内容</h3>
+          <p>避免冗长的测评，每篇都聚焦于一个有趣的视角或实用信息，方便碎片时间阅读。</p>
+        </div>
+        <div class="feature-item">
+          <h3>话题多元</h3>
+          <p>从经典游戏到新晋独立作品，偶尔穿插影视、科技等泛娱乐话题，边界灵活。</p>
+        </div>
+        <div class="feature-item">
+          <h3>无干扰排版</h3>
+          <p>页面强调可读性，减少弹窗、广告和复杂导航，让你更专注于内容本身。</p>
+        </div>
+      </div>
+
+      <!-- 引用块 / 使用心得 -->
+      <div class="insight-box">
+        <div class="label">使用场景</div>
+        <p>“午休时翻两篇短文，或者睡前浏览一下近期有什么值得留意的作品——这个网站恰好适合这种低强度的探索节奏。”</p>
+      </div>
+
+      <h3 style="font-weight: 600; font-size: 1.15rem; margin: 1.6rem 0 0.6rem; color: #3d352b;">建议这样使用</h3>
+      <ul class="usage-list">
+        <li><strong>当作兴趣索引</strong> — 如果你最近不知道玩什么，可以看看站内推荐的文章，或许会发现冷门佳作。</li>
+        <li><strong>了解背景故事</strong> — 有些文章会梳理游戏系列的发展脉络，适合想快速补课的新玩家。</li>
+        <li><strong>偶尔换个口味</strong> — 站内也有少量非游戏类内容（如影视、设计），可以当作阅读调剂。</li>
+        <li><strong>别期待攻略库</strong> — 它不主打攻略或修改器，而是提供观点和资讯。如果你需要深度教程，建议搭配其他专业站点。</li>
+      </ul>
+
+      <!-- 一个更自然的句子嵌入链接 -->
+      <p style="margin-top: 1.8rem;">
+        想亲自感受一下这种轻松的阅读氛围？直接前往 <a href="https://appmobile-jiuyou.com">九游娱乐</a>，从任意一篇文章开始即可。没有注册门槛，也没有信息轰炸。
+      </p>
+
+      <!-- 提示框 风格克制的说明 -->
+      <div class="note">
+        <strong>✱ 一点说明</strong>  — 网站内容保持更新，但节奏偏慢，不属于日更型媒体。如果你偏好高频信息流，可以把它加入书签，隔段时间再回来看看。
+      </div>
+
+      <!-- 迷你 FAQ 摘要 -->
+      <hr />
+      <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.6rem; color: #3d352b;">常见疑问 · 快速摘要</h3>
+      <div class="faq-summary">
+        <div class="faq-item">
+          <div class="q">是否需要注册或付费？</div>
+          <div class="a">完全免费，不强制注册，所有内容公开浏览。</div>
+        </div>
+        <div class="faq-item">
+          <div class="q">内容偏向哪类用户？</div>
+          <div class="a">适合轻度至中度游戏爱好者，以及对泛娱乐文化感兴趣的普通读者。</div>
+        </div>
+        <div class="faq-item">
+          <div class="q">有移动端版本吗？</div>
+          <div class="a">站点本身自适应，手机浏览器可以直接访问。没有独立 App。</div>
+        </div>
+      </div>
+
+      <p style="margin-top: 1.4rem; font-size: 0.98rem; color: #5f5546;">
+        如果你对某个话题感兴趣，也欢迎在站内探索、发现更多同类文章 —— 整个站点的结构简单明了，没有复杂的层级。
+      </p>
+    </div>
+
+    <div class="footer-note">
+      九游娱乐 · 一个可以安静翻阅的角落
+    </div>
+  </div>
+</body>
+</html>
